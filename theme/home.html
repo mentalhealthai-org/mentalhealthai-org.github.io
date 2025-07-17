@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{# ────────────────────────────────────────────────────────────────
+   Home page – research-oriented copy & visuals
+   ──────────────────────────────────────────────────────────────── #}
+
+{% block title %}Home · Open Mental-Health AI Research{% endblock %}
+
+{% block hero %}
+<section class="hero"
+         style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1700&q=70');">
+  <div class="container text-center">
+    <h1 class="display-4 fw-bold">Advancing Open-Source Mental-Health AI</h1>
+    <p class="lead mb-4">
+      We investigate, build and benchmark openly-licensed models &amp; libraries—hand-in-hand with clinicians.
+    </p>
+    <a href="https://discord.gg/Nu4MdGj9jB" class="btn btn-primary btn-lg me-2">
+      Get&nbsp;Involved
+    </a>
+    <a href="#research-approach" class="btn btn-outline-light btn-lg">
+      Learn&nbsp;More
+    </a>
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}
+
+{# ─── Core pillars tiles ─── #}
+<section class="section-padding">
+  <div class="container">
+    <div class="row text-center g-4">
+      {% set tiles = [
+        ('fa-code-branch',  'Open-Source&nbsp;First'),
+        ('fa-chart-line',   'Evidence-Based&nbsp;Benchmarks'),
+        ('fa-user-md',      'Clinician&nbsp;Collaboration')
+      ] %}
+      {% for icon, text in tiles %}
+        <div class="col-md-4">
+          <div class="p-4 h-100 border rounded-3">
+            <i class="fas {{ icon }} fa-2x text-primary mb-3"></i>
+            <p class="fw-semibold mb-0">{{ text | safe }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ─── Research approach ─── #}
+<section id="research-approach" class="bg-light section-padding">
+  <div class="container">
+    <h2 class="text-center mb-5">Our Research Workflow</h2>
+    <div class="row gy-5">
+      {% set steps = [
+        ('Investigate &amp; Benchmark',
+         'Test existing open-source libraries and AI models under permissive licences. Each model is stress-tested on privacy-preserving conversational datasets.'),
+        ('Develop New Libraries',
+         'Transform research insights into openly-licensed Python packages that push the state of the art while remaining reproducible and auditable.'),
+        ('Clinical Validation',
+         'Psychologists &amp; psychiatrists validate model outputs on real-world sessions (with full consent and anonymisation), shaping future iterations.'),
+      ] %}
+      {% for title, desc in steps %}
+        <div class="col-md-4 text-center">
+          <span class="badge bg-primary rounded-pill py-2 px-3 mb-3">{{ loop.index }}</span>
+          <h5 class="fw-semibold">{{ title | safe }}</h5>
+          <p class="text-muted">{{ desc | safe }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ─── Research focus areas ─── #}
+<section class="section-padding">
+  <div class="container">
+    <h2 class="text-center mb-5">Focus Areas</h2>
+    <div class="row g-4">
+      {% for area, icon, detail in [
+        ('Conversational&nbsp;Analysis', 'fa-comments',
+         'Categorise mental-health patterns from anonymised patient–therapist conversations.'),
+        ('Multi-Modal Context', 'fa-layer-group',
+         'Fuse mini-surveys, critical events, job &amp; relationship data to build longitudinal mental-health maps.'),
+        ('Predictive&nbsp;Modelling', 'fa-forward',
+         'Generate short-term wellbeing forecasts to aid proactive care planning.'),
+      ] %}
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas {{ icon }} fa-3x text-primary mb-3"></i>
+              <h5 class="card-title">{{ area | safe }}</h5>
+              <p class="card-text">{{ detail | safe }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ─── Call for collaborators ─── #}
+<section class="bg-primary text-white text-center py-5">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Psychologists &amp; Psychiatrists: Shape the Future with Us</h2>
+    <p class="mb-4">
+      Lend your expertise—co-author papers, access benchmark results, and refine real-world tools.
+      Email&nbsp;<a href="mailto:connect@mymhai.com" class="link-light fw-semibold">connect@mymhai.com</a>.
+    </p>
+    <a href="mailto:connect@mymhai.com?subject=I want to participate" class="btn btn-light btn-lg">
+      Join the Research Project
+    </a>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_scripts %}
+{# nothing yet #}
+{% endblock %}

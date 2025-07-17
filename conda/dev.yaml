@@ -1,0 +1,8 @@
+name: mhai-landing
+channels:
+  - nodefaults
+  - conda-forge
+dependencies:
+  - python <3.12
+  - pip
+  - poetry
