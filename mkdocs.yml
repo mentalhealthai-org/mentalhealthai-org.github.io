@@ -18,13 +18,9 @@ theme:
 
 extra_css:
   - css/style.css
-  - css/index.css
 
 extra_javascript:
   - js/script.js
-  - plugins/bootstrap/bootstrap.min.js
-  - plugins/google-map/gmap.js
-  - plugins/jquery/jquery.js
 
 nav:
   - Home: "index.md"
